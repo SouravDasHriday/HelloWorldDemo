@@ -28,3 +28,4 @@
 /home/server/dev_project/ci-cd_project_01/HelloWorldApp/HelloWorldApp/obj/Debug/net8.0/HelloWorldApp.pdb
 /home/server/dev_project/ci-cd_project_01/HelloWorldApp/HelloWorldApp/obj/Debug/net8.0/HelloWorldApp.genruntimeconfig.cache
 /home/server/dev_project/ci-cd_project_01/HelloWorldApp/HelloWorldApp/obj/Debug/net8.0/ref/HelloWorldApp.dll
+/home/server/dev_project/ci-cd_project_01/HelloWorldApp/HelloWorldApp/obj/Debug/net8.0/HelloWorldApp.sourcelink.json
