@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 6.0 # Or your project's .NET version
+  pre_build:
+    commands:
+      - echo "Restoring NuGet packages..."
+      - dotnet restore
+  build:
+    commands:
+      - echo "Running build..."
+      - dotnet build --configuration Release
+      # Note: The original project guide did not include a test project.
+      # If you don't have one, the 'dotnet test' command would fail, so we are leaving it out.
+  post_build:
+    commands:
+      - echo "Publishing the application..."
+      # This command packages the web app for deployment.
+      # Note the path to the .csproj file is now relative: HelloWorldApp/HelloWorldApp.csproj
+      - dotnet publish --configuration Release --output ./app_publish HelloWorldApp/HelloWorldApp.csproj
+
+artifacts:
+  files:
+    # This tells CodeBuild to grab everything from the publish folder
+    # and package it into a zip file for deployment.
+    - '**/*'
+  base-directory: 'app_publish'
